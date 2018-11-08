@@ -1,9 +1,13 @@
 class Video < ApplicationRecord
-  validates :title, :description, :video_url, :thumbnail_url, :uploader_id, presence: true
+  validates :title, :description, :video_url, :thumbnail_url, :uploader_id, :channel_id, presence: true
 
   belongs_to :user,
     foreign_key: :uploader_id,
     class_name: :User
+
+  belongs_to :channel,
+    foreign_key: :channel_id,
+    class_name: :Channel
 
   has_one_attached :film
   has_one :custom_thumbnail_image
@@ -84,6 +88,6 @@ class Video < ApplicationRecord
     m_data = output.match("Duration: ([0-9]+):([0-9]+):([0-9]+).([0-9]+)")
     num_seconds = (m_data[1].to_i * 3600) + (m_data[2].to_i * 60) + (m_data[3].to_i)
     (num_seconds.is_a?(Integer) ? num_seconds : 0)
-  end 
+  end
 
 end

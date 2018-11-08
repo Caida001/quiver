@@ -8,6 +8,7 @@ class CreateVideos < ActiveRecord::Migration[5.2]
       t.integer :views, default: 0
       t.integer :length
       t.integer :uploader_id, null: false
+      t.integer :channel_id
 
       t.timestamps
     end

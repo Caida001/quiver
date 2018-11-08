@@ -6,26 +6,18 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :chatroom_users
-  has_one :chatroom
 
-  has_many :chat_rooms, dependent: :destroy
-
-  has_many :my_subscriptions,
-    class_name: :Subscription,
-    foreign_key: :user_id
+  has_one :channel,
+    class_name: :Channel,
+    foreign_key: :owner_id
 
   has_many :subscriptions,
-  through: :my_subscriptions,
-  source: :user
-
-  has_many :others_subscriptions,
     class_name: :Subscription,
     foreign_key: :subscriber_id
 
   has_many :subscribers,
-    through: :others_subscriptions,
-    source: :subscriber
+    through: :channel,
+    source: :my_subscriptions
 
   has_many :videos,
     foreign_key: :uploader_id,
