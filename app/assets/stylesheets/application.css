@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+.splash-container {
+  background-image: url(https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDbkZCbXBABGAEyCNxVSkmUb5Wc);
+  background-color: black;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+ .carousel {
+   width: 1000px;
+   margin-top: 285px;
+ }
+
+ .carousel-control {
+   width: 0%;
+ }

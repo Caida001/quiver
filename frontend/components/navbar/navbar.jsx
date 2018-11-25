@@ -8,6 +8,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      email: '',
       username: '',
       password: '',
       showModal1: false,
@@ -47,6 +48,12 @@ class NavBar extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  handleSignin(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm1(user);
   }
 
   renderErrors() {
@@ -118,7 +125,7 @@ class NavBar extends React.Component {
             <br/>
             <input type="password" value={this.state.password} onChange={this.update('password')} />
             <br/>
-            <button className="session-submit" type="submit" >Log In</button>
+            <input className="session-submit" type="submit" value="Log In" />
             </form>
             <button className="login-button" onClick={this.props.demoLogin.bind(this)}>Demo Login</button>
           </Modal.Body>
@@ -129,7 +136,7 @@ class NavBar extends React.Component {
             <Modal.Title>Join Quiver today</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form onSubmit={this.handleSubmit} >
+            <form onSubmit={this.handleSignin} >
               <h4>Username</h4>
               <br/>
               <input type="text" value={this.state.username} onChange={this.update('username')} />
@@ -169,7 +176,7 @@ class NavBar extends React.Component {
               <br/>
               <p>By clicking Sign Up, you are indicating that you have read and agree to the Terms of Service and Privacy Policy.</p>
               <br/>
-              <button className="session-submit" type="submit">Sign Up</button>
+              <input className="session-submit" type="submit" value="Sign Up" />
             </form>
           </Modal.Body>
         </Modal>
