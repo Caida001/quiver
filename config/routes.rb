@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :subscriptions
   end
   mount ActionCable.server, at: '/cable'
-  root to: 'static_page#root'
+  root to: 'static_pages#root'
 end
