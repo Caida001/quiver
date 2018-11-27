@@ -1,19 +1,22 @@
 class Api::MessagesController < ApplicationController
-  before_action :ensure_session_token!
-  before_action :set_chatroom
-
-  def index
-    @messages = Message.all
-    render :index
-  end
+  before_action :require_signed_in!
 
   def create
     @message = Message.new(message_params)
-    @message.chatroom_user = current_user.chatroom_users.where(user_id: @message.chatroom_user_id)
-    if @message.save
-      render :show
+
+    if @message.save!
+      chatroom = Chatroom.find(params[:chatroom_id])
+
+      MessagesChannel.broadcast_to chatroom, message:
+        {
+          id: @message.id,
+          body: @message.body,
+          username: @message.user.username,
+          channel_id: @message.chatroom.channel.id
+        }
+
     else
-      render json: ['invalid message'], status: 401
+      render json: @message.errors.full_messages, status: 422
     end
   end
 
@@ -21,16 +24,9 @@ class Api::MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
-  def destroy
-    @message = Message.find(params[:id])
-    if @message.chatroom_user_id == current_user.id
-      @message.destroy
-    else
-      render json: ["please delete your own message"], status: 401
-    end
-  end
+  private
 
   def message_params
-    params.require(:message).permit(:body, :chatroom_user_id, :chatroom_id)
+    params.require(:message).permit(:body, :user_id, :chatroom_id)
   end
-end 
+end

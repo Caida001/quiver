@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_193904) do
+ActiveRecord::Schema.define(version: 2018_11_25_182004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,27 +38,21 @@ ActiveRecord::Schema.define(version: 2018_11_07_193904) do
 
   create_table "channels", force: :cascade do |t|
     t.string "name"
+    t.string "pic_url"
     t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "chat_rooms", force: :cascade do |t|
-    t.string "title"
+  create_table "chatrooms", force: :cascade do |t|
     t.integer "channel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "chatroom_users", force: :cascade do |t|
-    t.integer "chatroom_id"
-    t.integer "channel_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "custom_thumbnail_images", force: :cascade do |t|
-    t.integer "video_id"
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_channel_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,24 +67,14 @@ ActiveRecord::Schema.define(version: 2018_11_07_193904) do
     t.index ["chatroom_user_id"], name: "index_messages_on_chatroom_user_id"
   end
 
-  create_table "subscriptions", force: :cascade do |t|
-    t.integer "channel_id"
-    t.integer "subscriber_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["channel_id"], name: "index_subscriptions_on_channel_id"
-    t.index ["subscriber_id"], name: "index_subscriptions_on_subscriber_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
-    t.string "email", null: false
+    t.string "email"
     t.string "session_token", null: false
     t.string "password_digest", null: false
     t.string "image_url", default: "https://static-cdn.jtvnw.net/user-default-pictures/0ecbb6c3-fecb-4016-8115-aa467b7c36ed-profile_image-70x70.jpg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username"
   end

@@ -15,6 +15,7 @@ class NavBar extends React.Component {
       showModal2: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSignup = this.handleSignup.bind(this);
     this.close1 = this.close1.bind(this);
     this.close2 = this.close2.bind(this);
     this.handleModal1 = this.handleModal1.bind(this);
@@ -50,7 +51,7 @@ class NavBar extends React.Component {
     this.props.processForm(user);
   }
 
-  handleSignin(e) {
+  handleSignup(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm1(user);
@@ -136,7 +137,7 @@ class NavBar extends React.Component {
             <Modal.Title>Join Quiver today</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form onSubmit={this.handleSignin} >
+            <form onSubmit={this.handleSignup} >
               <h4>Username</h4>
               <br/>
               <input type="text" value={this.state.username} onChange={this.update('username')} />

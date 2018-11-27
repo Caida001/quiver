@@ -9,10 +9,7 @@ class Video < ApplicationRecord
     foreign_key: :channel_id,
     class_name: :Channel
 
-  has_one_attached :film
-  has_one :custom_thumbnail_image
 
-  validate :ensure_film
 
   include PgSearch
 

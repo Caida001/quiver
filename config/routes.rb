@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
+    resources :channels, only: [:index, :show, :update]
+    resources :featured_channels, only: :index
+    resources :follows, only: [:index, :create, :destroy]
     resources :videos, only: [:index, :show, :create, :update, :destroy]
-    resources :chatrooms do
-      resource :chatroom_users
-      resources :messages
+    resources :chatrooms, only: :show do
+      resources :messages, only: [:create, :show]
     end
-    resources :subscriptions
   end
   mount ActionCable.server, at: '/cable'
   root to: 'static_pages#root'

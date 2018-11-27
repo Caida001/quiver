@@ -1,30 +1,31 @@
 class User < ApplicationRecord
-  validates :username, :email, :session_token, :password_digest, presence: true
-  validates :email, :session_token, uniqueness: true
+  validates :username, :session_token, :password_digest, presence: true
+  validates :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
   attr_reader :password
   after_initialize :ensure_session_token
 
+  after_create :ensure_channel
 
   has_one :channel,
     class_name: :Channel,
-    foreign_key: :owner_id
+    foreign_key: :owner_id,
+    dependent: :destroy
 
-  has_many :subscriptions,
-    class_name: :Subscription,
-    foreign_key: :subscriber_id
+  has_many :messages
 
-  has_many :subscribers,
-    through: :channel,
-    source: :my_subscriptions
+  has_many :follows,
+    class_name: :Follow,
+    foreign_key: :follower_id,
+    dependent: :destroy
 
-  has_many :videos,
-    foreign_key: :uploader_id,
-    class_name: :Video
+  has_many :followed_channels,
+    source: :followed_channel,
+    through: :follows
 
   def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+    user = User.find_by_username(username)
     return nil unless user && user.valid_password?(password)
     user
   end
@@ -45,6 +46,10 @@ class User < ApplicationRecord
   end
 
   private
+
+  def ensure_channel
+    self.channel ||= Channel.create!(owner_id: self.id)
+  end
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
