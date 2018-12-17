@@ -16,6 +16,7 @@ class NavBar extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
     this.close1 = this.close1.bind(this);
     this.close2 = this.close2.bind(this);
     this.handleModal1 = this.handleModal1.bind(this);
@@ -48,12 +49,21 @@ class NavBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    this.close1();
     this.props.processForm(user);
+  }
+
+  handleGuestLogin(e) {
+    e.preventDefault();
+    const demoUser = {username: "guest", password: "guestpassword"};
+    this.close1();
+    this.props.demoLogin(demoUser);
   }
 
   handleSignup(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    this.close2();
     this.props.processForm1(user);
   }
 
@@ -75,7 +85,7 @@ class NavBar extends React.Component {
     let button2;
 
     if(isLoggedIn) {
-      button1 = <h2>Hi {this.props.currentUser.username}</h2>;
+      button1 = <h4>Hi {this.props.currentUser.username}</h4>;
       button2 = <button className="logout" onClick={this.props.logout}>Log Out</button>;
     } else {
       button1 = <button className="login" >Log in</button>;
@@ -128,7 +138,7 @@ class NavBar extends React.Component {
             <br/>
             <input className="session-submit" type="submit" value="Log In" />
             </form>
-            <button className="login-button" onClick={this.props.demoLogin.bind(this)}>Demo Login</button>
+            <button className="login-button" onClick={this.handleGuestLogin}>Demo Login</button>
           </Modal.Body>
         </Modal>
 

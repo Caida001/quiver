@@ -90,7 +90,10 @@ Channel.find_by_owner_id(john.id).update_attributes!(
 )
 
 
-
+User.create!(
+  username: "guest",
+  password: "guestpassword"
+)
 
 dallas = User.create!(
           username: "Dallas",
