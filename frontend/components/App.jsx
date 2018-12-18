@@ -9,10 +9,11 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <Route exact path="/" component={NavbarContainer} />
+    <Route path="/" component={NavbarContainer} />
 
 
-
+    <Route path="/channels" component={FollowContainer} />
+    <Route path="/categories" component={FollowContainer} />
     <Route exact path="/" component={SplashContainer} />
     <Route exact path="/channels" component={ChannelIndexContainer} />
     <Route exact path="/categories" component={CategoryIndexContainer} />
