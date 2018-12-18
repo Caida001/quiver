@@ -22,6 +22,9 @@ class Channel < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 
+  belongs_to :category, optional: true
+
+
   def self.top_five_results(query_params)
     param = '%' + query_params.downcase + '%'
     Channel.where('lower(name) LIKE ?', param).limit(5)

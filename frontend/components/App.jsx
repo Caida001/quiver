@@ -8,8 +8,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <Route path="/" component={NavbarContainer} />
-    <Route path="/channels" component={FollowContainer} />
+    <Route exact path="/" component={NavbarContainer} />
+
 
 
     <Route exact path="/" component={SplashContainer} />

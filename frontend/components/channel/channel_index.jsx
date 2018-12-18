@@ -20,27 +20,26 @@ class ChannelIndex extends React.Component {
 
   render() {
 
-    debugger
 
-    if(this.props.channels) {
+    if(this.props.channels.length > 0) {
+
       return(
         <div className="channel-index">
-          <ul>
+
             {this.props.channels.map((channel) => {
-              <li key={channel.id} className="channel-index_item">
-                <Link to={`/channels/${channel.id}`}>
-                  <div className="index-item-image">
-                    <img src={channel.pic_url} />
-                  </div>
-                  <div className='index-item-name'>
-                    <h1>{channel.name}</h1>
-                  </div>
-                </Link>
-              </li>})}
-          
-          </ul>
+            return <li key={channel.id} className="channel-index_item">
+              <Link to={`/channels/${channel.id}`}>
+                <div className="index-item-image">
+                  <img src={channel.pic_url} />
+                </div>
+                <div className='index-item-name'>
+                  <h1>{channel.name}</h1>
+                </div>
+              </Link>
+            </li>})}  
+
         </div>
-      );
+      )
     } else {
       return <div>Loading...</div>;
     }
