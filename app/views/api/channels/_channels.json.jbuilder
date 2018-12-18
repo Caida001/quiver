@@ -3,7 +3,8 @@ channels.each do |channel|
     json.id channel.id
     json.name channel.name
     json.category channel.category
-    json.owner_id channel.owner_id
+    json.owner channel.owner
     json.pic_url channel.pic_url
+    json.cate channel.cate
   end
 end

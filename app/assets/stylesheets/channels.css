@@ -1,0 +1,35 @@
+.channel-index {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  padding: 20px;
+  margin: auto;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.channel-index li{
+  list-style: none;
+}
+
+.channel-index-item{
+  padding: 10px;
+}
+
+.channel-info {
+  display: flex;
+}
+
+.index-item-text {
+  margin-left: 10px;
+  padding-top: 5px;
+}
+
+.index-item-text p{
+  margin-bottom: 0px;
+}
+
+.user-image img{
+  width: 40px;
+  height: 40px;
+}
