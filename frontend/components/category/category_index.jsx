@@ -1,0 +1,42 @@
+import React from "react";
+import { withRouter, Link } from 'react-router-dom';
+
+class CategoryIndex extends React.Component{
+  constructor(props){
+    super(props)
+  }
+
+  componentDidMount() {
+    this.props.requestAllCategories();
+  }
+
+  render() {
+
+    if(this.props.categories.length > 0) {
+
+      return(
+        <div className="category-index">
+
+            {this.props.categories.map((category) => {
+            return <li key={category.id} className="category-index-item">
+              <Link to={`/categories/${category.id}`}>
+                <div className="category-item-image">
+                  <img src={category.category_url} />
+                </div>
+
+                <p>{category.name}</p>
+
+
+              </Link>
+            </li>})}
+
+        </div>
+      )
+    } else {
+      return <div>Loading...</div>;
+    }
+
+  }
+}
+
+export default withRouter(CategoryIndex);

@@ -11,5 +11,13 @@ export const receiveAllCategories = categories => ({
 
 export const receiveSingleCategory = category => ({
   type: RECEIVE_SINGLE_CATEGORY,
-  category 
+  category
 })
+
+export const requestAllCategories = () => dispatch => (
+  APIUtil.fetchAllCategories().then(categories => dispatch(receiveAllCategories(categories)))
+)
+
+export const requestSingleCategory = (categoryId) => dispatch => (
+  APIUtil.fetchSingleCategory(categoryId).then(category => dispatch(receiveSingleCategory(category)))
+)
