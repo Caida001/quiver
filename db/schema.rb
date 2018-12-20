@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2018_12_17_215907) do
     t.string "email"
     t.string "session_token", null: false
     t.string "password_digest", null: false
-    t.string "image_url", default: "https://static-cdn.jtvnw.net/user-default-pictures/0ecbb6c3-fecb-4016-8115-aa467b7c36ed-profile_image-70x70.jpg"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["session_token"], name: "index_users_on_session_token", unique: true

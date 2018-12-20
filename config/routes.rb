@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :channels, only: [:index, :show, :update]
     resources :categories, only: [:index, :show]
-    resources :featured_channels, only: :index
     resources :follows, only: [:index, :create, :destroy]
     resources :videos, only: [:index, :show, :create, :update, :destroy]
     resources :chatrooms, only: :show do

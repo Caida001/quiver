@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter, Link } from 'react-router-dom';
+import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 class CategoryIndex extends React.Component{
   constructor(props){
@@ -10,27 +11,46 @@ class CategoryIndex extends React.Component{
     this.props.requestAllCategories();
   }
 
+
   render() {
 
     if(this.props.categories.length > 0) {
 
       return(
-        <div className="category-index">
+        <div>
 
-            {this.props.categories.map((category) => {
-            return <li key={category.id} className="category-index-item">
-              <Link to={`/categories/${category.id}`}>
-                <div className="category-item-image">
-                  <img src={category.category_url} />
-                </div>
+          <div class="dropdown-cate">
+            <DropdownButton
+              bsStyle={'primary'}
+              title={'Categories'}
+            >
+              <MenuItem eventKey="1" href="#/categories">Categories</MenuItem>
+              <MenuItem eventKey="2" href="#/channels">Live Channels</MenuItem>
 
-                <p>{category.name}</p>
+            </DropdownButton>
+
+          </div>
 
 
-              </Link>
-            </li>})}
+          <div className="category-index">
+
+              {this.props.categories.map((category) => {
+              return <li key={category.id} className="category-index-item">
+                <Link to={`/categories/${category.id}`}>
+                  <div className="category-item-image">
+                    <img src={category.category_url} />
+                  </div>
+
+                  <p>{category.name}</p>
+
+
+                </Link>
+              </li>})}
+
+          </div>
 
         </div>
+
       )
     } else {
       return <div>Loading...</div>;

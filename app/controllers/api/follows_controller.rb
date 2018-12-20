@@ -17,7 +17,8 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = current_user.follows.find_by_followed_channel_id(params[:id])
+
+    @follow = current_user.follows.find(params[:id])
     @follow.destroy
     @follows = current_user.follows
     render "api/follows/index"
@@ -29,4 +30,4 @@ class Api::FollowsController < ApplicationController
   def follow_params
     params.require(:follow).permit(:follower_id, :followed_channel_id)
   end
-end 
+end

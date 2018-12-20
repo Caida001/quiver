@@ -1,10 +1,9 @@
 .follow-header {
   width: 90%;
-  margin: auto;
   background-color: #2c2541!important;
   border-radius: 6px!important;
   padding: 20px;
-  margin: 20px;
+  margin: 10px;
 }
 
 .follow-header img {
@@ -33,7 +32,7 @@
 
 .navbar-primary {
   background-color: #333;
-  height: 90%;
+  height: 95%;
   position: fixed;
   top: 51px;
   width: 15%;
@@ -105,4 +104,13 @@
 
 .navbar-primary-menu li a:hover .glyphicon {
   color: orchid;
+}
+
+.navbar-primary-menu img {
+  width: 30px;
+  height: 30px;
+}
+
+.close span{
+  color: white;
 }

@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_CHANNELS, RECEIVE_SINGLE_CHANNEL, RECEIVE_FEATURED_CHANNELS, EDIT_CHANNEL, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/channel_actions';
+import { RECEIVE_ALL_CHANNELS, RECEIVE_SINGLE_CHANNEL, EDIT_CHANNEL, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/channel_actions';
 import merge from 'lodash/merge';
 
 const channelsReducer = (state = {}, action) => {
@@ -9,8 +9,6 @@ const channelsReducer = (state = {}, action) => {
       return action.channels;
     case RECEIVE_SINGLE_CHANNEL:
       return action.channel;
-    case RECEIVE_FEATURED_CHANNELS:
-      return action.channels;
     case EDIT_CHANNEL:
       return action.channel;
     case RECEIVE_ERRORS:

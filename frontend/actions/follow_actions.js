@@ -27,6 +27,6 @@ export const addFollow = follow => dispatch => (
   APIUtil.createFollow(follow).then(response => dispatch(createFollow(response)))
 );
 
-export const deleteFollow = channelId => dispatch => (
-  APIUtil.destroyFollow(channelId).then(response => dispatch(removeFollow(response)))
+export const deleteFollow = followId => dispatch => (
+  APIUtil.destroyFollow(followId).then(response => dispatch(removeFollow(response)))
 );

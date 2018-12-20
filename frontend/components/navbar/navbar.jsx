@@ -101,7 +101,7 @@ class NavBar extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            <NavItem eventKey={1} href="">
+            <NavItem eventKey={1} href="#/categories">
               Browse
             </NavItem>
             <NavItem eventKey={2} href="">

@@ -5,60 +5,67 @@ import { withRouter, Link, NavLink } from 'react-router-dom';
 class FollowIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
+    this.props.requestAllChannels();
     this.props.requestFollows();
     $('.btn-expand-collapse').click(function(e) {
 				$('.navbar-primary').toggleClass('collapsed');
       });
   }
 
+  handleClick(id) {
+    this.props.deleteFollow(id)
+  }
+
+
   render() {
     const follows = this.props.follows;
 
-    if(follows.length > 0) {
+    if(Object.keys(this.props.currentUser).length > 0) {
 
       return (
-        <div className="follow-index-container">
-          <header className="follow-header">
-            <h2>Subscriptions</h2>
-          </header>
 
         <nav class="navbar-primary">
-          <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
+          <div className="follow-container">
+            <header className="follow-header">
+              <img src="https://static.twitchcdn.net/assets/upsell-center-dark-6c092df86238db84cff1.png" />
+
+              <h4 className="discover">Follow channels and easily access your favorites here. Here are a few you might like!</h4>
+
+            </header>
+          </div>
+          <h4 className="featured">Followed Channels</h4>
+
+          <a href="#/channels" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
           <ul class="navbar-primary-menu">
-            <li>
-              <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
-              <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Profile</span></a>
-              <a href="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Settings</span></a>
-              <a href="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Notification</span></a>
-              <a href="#"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Monitor</span></a>
-            </li>
+            {this.props.follows.map(follow => (
+
+                <li key={follow.id} className="follow-item">
+                  <Link key={follow.id} to={`/channels/${follow.followed_channel.id}`}>
+                    <span className='glyphicon'>
+                      <img src={follow.followed_channel.pic_url} />
+                    </span>
+
+
+                    <span className="nav-label">
+                      {follow.followed_channel.name}
+                    </span>
+</Link>
+                    <button type="button" class="close" aria-label="Close" onClick={this.handleClick(follow.followed_channel.id)}>
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+                </li>
+
+            ))}
           </ul>
         </nav>
 
-
-          <div className="follow-list">
-            <ul>
-              {follows.map(follow => (
-                <Link key={follow.id} to={`/channels/${follow.followed_channel.id}`}>
-                  <li className="follow-item">
-                    <div className='followed-channel-img'>
-                      <img src={follow.followed_channel.owner.image_url} />
-                    </div>
-
-                    <div className="followed-channel-name">
-                      <h3>{follow.followed_channel.name}</h3>
-                    </div>
-
-                  </li>
-                </Link>
-              ))}
-
-            </ul>
-          </div>
-        </div>
       );
     } else {
       return (
@@ -78,13 +85,14 @@ class FollowIndex extends React.Component {
 
             <a href="#/channels" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
             <ul class="navbar-primary-menu">
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
-                <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Profile</span></a>
-                <a href="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Settings</span></a>
-                <a href="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Notification</span></a>
-                <a href="#"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Monitor</span></a>
-              </li>
+              {this.props.channels.slice(0,5).map(channel => {
+                return <li>
+                  <a href={`#/channels/${channel.id}`}>
+                    <span class="glyphicon"><img src={channel.owner.image_url} /></span>
+                    <span class="nav-label">{channel.name}</span>
+                  </a>
+                </li>
+              })}
             </ul>
           </nav>
 

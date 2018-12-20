@@ -12,13 +12,6 @@ export const fetchSingleChannel = channelId => (
   })
 );
 
-export const fetchFeaturedChannels = () => (
-  $.ajax({
-    method: 'GET',
-    url: 'api/featured_channels'
-  })
-);
-
 
 export const updateChannel = channel => (
   $.ajax({
