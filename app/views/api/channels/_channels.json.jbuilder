@@ -5,6 +5,7 @@ channels.each do |channel|
     json.category channel.category
     json.owner channel.owner
     json.pic_url channel.pic_url
+    json.vid_url channel.vid_url
     json.cate channel.cate
   end
 end

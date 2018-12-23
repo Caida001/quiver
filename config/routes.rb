@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :channels, only: [:index, :show, :update]
     resources :categories, only: [:index, :show]
     resources :follows, only: [:index, :create, :destroy]
-    resources :videos, only: [:index, :show, :create, :update, :destroy]
+    resources :videos, only: [:show, :create, :update, :destroy]
     resources :chatrooms, only: :show do
       resources :messages, only: [:create, :show]
     end

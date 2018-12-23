@@ -30,7 +30,8 @@ Channel.find_by_owner_id(batman.id).update_attributes!(
           name: 'jukes',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/5cb7c333dca3c46b1468_jukes_31720741664_1051171787/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
-          category_id: league.id
+          category_id: league.id,
+          vid_url: 'https://www.youtube.com/watch?v=pO2_iUkojCY'
 )
 
 shadow = User.create!(
@@ -43,7 +44,8 @@ Channel.find_by_owner_id(shadow.id).update_attributes!(
           name: 'Sons of the Patriots',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/cf790136a918aa965d00_patopapao_31723104960_1051319493/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
-          category_id: league.id
+          category_id: league.id,
+          vid_url: 'https://www.youtube.com/watch?v=BHrUj9G-mwc'
 )
 
 dbz = User.create!(
@@ -56,7 +58,8 @@ Channel.find_by_owner_id(dbz.id).update_attributes!(
           name: 'Fighters of Z',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/c084abfeda/sgstyllee_10511238912_10511238912/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
-          category_id: league.id
+          category_id: league.id,
+          vid_url: 'https://www.youtube.com/watch?v=qdBpjrhqLrM'
 )
 
 spidey = User.create!(
@@ -69,7 +72,8 @@ Channel.find_by_owner_id(spidey.id).update_attributes!(
           name: 'Mahvel',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/388c4669b47d6b31bad1_cloakzy_31717243024_1050953122/thumb/thumb0-320x180.jpg',
           cate: 'Fortnite',
-          category_id: fortnite.id
+          category_id: fortnite.id,
+          vid_url: 'https://www.youtube.com/watch?v=8pR0o2fGyHg'
 )
 
 dio = User.create!(
@@ -82,7 +86,8 @@ Channel.find_by_owner_id(dio.id).update_attributes!(
           name: 'It is I, Dio!',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/16c4f289671e34594b92_rubius_31143984320_1015124451//thumb/thumb333054537-320x180.jpg',
           cate: 'Fortnite',
-          category_id: fortnite.id
+          category_id: fortnite.id,
+          vid_url: 'https://www.youtube.com/watch?v=hATyU-bb1gc'
 )
 
 zelda = User.create!(
@@ -95,7 +100,8 @@ Channel.find_by_owner_id(zelda.id).update_attributes!(
           name: 'For Heart and Soul',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/1baa3439ebd31c30d32b_joshog_30847389760_996587291//thumb/thumb324934405-320x180.jpg',
           cate: 'Call of Duty',
-          category_id: call.id
+          category_id: call.id,
+          vid_url: 'https://www.youtube.com/watch?v=1rPxiXXxftE'
 )
 
 inside = User.create!(
@@ -108,7 +114,8 @@ Channel.find_by_owner_id(inside.id).update_attributes!(
           name: 'Mind Channel',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/828a64c4b397611112de_halifax_25660301712_672439349//thumb/thumb156446883-320x180.jpg',
           cate: 'Call of Duty',
-          category_id: call.id
+          category_id: call.id,
+          vid_url: 'https://www.youtube.com/watch?v=NP4AuKdb_dA'
 )
 
 john = User.create!(
@@ -121,7 +128,8 @@ Channel.find_by_owner_id(john.id).update_attributes!(
           name: 'John Freeman',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/c39403717190323738df_sheepdog59_26096281296_699687772//thumb/thumb177753315-320x180.jpg',
           cate: 'Grand Theft Auto',
-          category_id: grand.id
+          category_id: grand.id,
+          vid_url: 'https://www.youtube.com/watch?v=OHxyZaZlaOs'
 )
 
 
@@ -136,7 +144,8 @@ Channel.find_by_owner_id(dallas.id).update_attributes!(
           name: 'JL TOMA',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/77cf140b33_vaderrp_24113323408_575753215//thumb/thumb111605124-320x180.jpg',
           cate: 'Grand Theft Auto',
-          category_id: grand.id
+          category_id: grand.id,
+          vid_url: ''
 )
 
 ganymede = User.create!(
@@ -149,7 +158,8 @@ Channel.find_by_owner_id(ganymede.id).update_attributes!(
           name: 'sura',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/f188bae35d91d1ba76ce_venalis_30500312224_974894945//thumb/thumb314406280-320x180.jpg',
           cate: 'Grand Theft Auto',
-          category_id: grand.id
+          category_id: grand.id,
+          vid_url: ''
 )
 
 mikey = User.create!(
@@ -162,7 +172,8 @@ Channel.find_by_owner_id(mikey.id).update_attributes!(
           name: 'kyle',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/342d66149a1a76dec618_spaceboy_29452037520_909422508//thumb/thumb284098963-320x180.jpg',
           cate: 'Grand Theft Auto',
-          category_id: grand.id
+          category_id: grand.id,
+          vid_url: ''
 )
 
 terrance = User.create!(
@@ -175,7 +186,8 @@ Channel.find_by_owner_id(terrance.id).update_attributes!(
           name: 'vale',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/a5878da11b8d2076dfb4_iddqd_29009864016_881786664//thumb/thumb272314853-320x180.jpg',
           cate: 'Overwatch',
-          category_id: overwatch.id
+          category_id: overwatch.id,
+          vid_url: ''
 )
 
 joey = User.create!(
@@ -188,7 +200,8 @@ Channel.find_by_owner_id(joey.id).update_attributes!(
           name: 'headcola',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/f2177d25c8d596c91be8_nyxx_tv_31696024960_1049626993/thumb/thumb0-320x180.jpg',
           cate: 'Warframe',
-          category_id: warframe.id
+          category_id: warframe.id,
+          vid_url: ''
 )
 
 howard = User.create!(
@@ -201,7 +214,8 @@ Channel.find_by_owner_id(howard.id).update_attributes!(
           name: 'DropDeadRed',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/41b09d57187cb664bb70_nyxx_tv_31726658848_1051541611/thumb/thumb0-320x180.jpg',
           cate: 'Warframe',
-          category_id: warframe.id
+          category_id: warframe.id,
+          vid_url: ''
 )
 
 ade = User.create!(
@@ -214,7 +228,8 @@ Channel.find_by_owner_id(ade.id).update_attributes!(
           name: 'wintergaming',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/375e28d61fbc4014e7fe_x5_pig_31720539760_1051159168/thumb/thumb0-320x180.jpg',
           cate: 'StarCraft II',
-          category_id: star.id
+          category_id: star.id,
+          vid_url: ''
 )
 
 virginia = User.create!(
@@ -227,7 +242,8 @@ Channel.find_by_owner_id(virginia.id).update_attributes!(
           name: 'Dragon',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/3044f567e58814a562a5_x5_pig_31660010960_1047376118//thumb/thumb350716141-320x180.jpg',
           cate: 'StarCraft II',
-          category_id: star.id
+          category_id: star.id,
+          vid_url: ''
 )
 
 naum = User.create!(
@@ -240,7 +256,8 @@ Channel.find_by_owner_id(naum.id).update_attributes!(
           name: 'cosmos',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/375e28d61fbc4014e7fe_x5_pig_31720539760_1051159168/thumb/thumb0-320x180.jpg',
           cate: 'StarCraft II',
-          category_id: star.id
+          category_id: star.id,
+          vid_url: ''
 )
 
 zpants = User.create!(
@@ -253,7 +270,8 @@ Channel.find_by_owner_id(zpants.id).update_attributes!(
           name: 'djorjix',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/ee207ae758cb49b03fb1_livibee_31711260064_1050579187/thumb/thumb0-320x180.jpg',
           cate: 'StarCraft II',
-          category_id: star.id
+          category_id: star.id,
+          vid_url: ''
 )
 
 
@@ -267,7 +285,8 @@ Channel.find_by_owner_id(demo.id).update_attributes!(
           name: 'noname',
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/ee207ae758cb49b03fb1_livibee_31711260064_1050579187/thumb/thumb0-320x180.jpg',
           cate: 'StarCraft II',
-          category_id: star.id
+          category_id: star.id,
+          vid_url: ''
 )
 
 Follow.create!(follower_id: demo.id, followed_channel_id: zpants.id)
