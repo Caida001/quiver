@@ -31,7 +31,7 @@ Channel.find_by_owner_id(batman.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/5cb7c333dca3c46b1468_jukes_31720741664_1051171787/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
           category_id: league.id,
-          vid_url: 'https://www.youtube.com/watch?v=pO2_iUkojCY'
+          vid_url: 'http://player.twitch.tv/?video=187649386&time=01h09m15s'
 )
 
 shadow = User.create!(
@@ -45,7 +45,7 @@ Channel.find_by_owner_id(shadow.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/cf790136a918aa965d00_patopapao_31723104960_1051319493/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
           category_id: league.id,
-          vid_url: 'https://www.youtube.com/watch?v=BHrUj9G-mwc'
+          vid_url: 'http://player.twitch.tv/?video=204800797&time=10m45s'
 )
 
 dbz = User.create!(
@@ -59,7 +59,7 @@ Channel.find_by_owner_id(dbz.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/c084abfeda/sgstyllee_10511238912_10511238912/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
           category_id: league.id,
-          vid_url: 'https://www.youtube.com/watch?v=qdBpjrhqLrM'
+          vid_url: 'http://player.twitch.tv/?video=204860635&time=01h52m50s'
 )
 
 spidey = User.create!(
@@ -73,7 +73,7 @@ Channel.find_by_owner_id(spidey.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/388c4669b47d6b31bad1_cloakzy_31717243024_1050953122/thumb/thumb0-320x180.jpg',
           cate: 'Fortnite',
           category_id: fortnite.id,
-          vid_url: 'https://www.youtube.com/watch?v=8pR0o2fGyHg'
+          vid_url: 'http://player.twitch.tv/?video=187283482&time=03m46s'
 )
 
 dio = User.create!(
@@ -87,7 +87,7 @@ Channel.find_by_owner_id(dio.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/16c4f289671e34594b92_rubius_31143984320_1015124451//thumb/thumb333054537-320x180.jpg',
           cate: 'Fortnite',
           category_id: fortnite.id,
-          vid_url: 'https://www.youtube.com/watch?v=hATyU-bb1gc'
+          vid_url: 'http://player.twitch.tv/?video=182600540&time=14m52s'
 )
 
 zelda = User.create!(
