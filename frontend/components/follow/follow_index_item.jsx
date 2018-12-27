@@ -14,8 +14,9 @@ class FollowIndexItem extends React.Component {
 
   render() {
 
+
     let {follow} = this.props
-    if(follow) {
+    if(follow != undefined) {
       return (
         <li className="follow-item">
           <Link className="follow-link" key={follow.id} to={`/channels/${follow.followed_channel.id}`}>

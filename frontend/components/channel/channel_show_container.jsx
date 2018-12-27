@@ -6,10 +6,12 @@ import { withRouter } from 'react-router-dom';
 import ChannelShow from './channel_show';
 
 const mapStateToProps = (state, { match }) => {
-  debugger
+
   return {
     channel: state.entities.channels[match.params.channelId],
-    currentUser: state.session.currentUser
+    currentUser: state.entities.users,
+    followedChannelIds: Object.values(state.entities.follows).map(el => el['followed_channel_id']),
+    follows: Object.values(state.entities.follows)
 
   };
 };
@@ -19,8 +21,8 @@ const mapDispatchToProps = dispatch => {
   return{
     requestSingleChannel: channelId => dispatch(requestSingleChannel(channelId)),
     requestFollows: () => dispatch(requestFollows()),
-    createFollow: follow => dispatch(createFollow(follow)),
-    deleteFollow: channelId => dispatch(deleteFollow(channelId))
+    addFollow: follow => dispatch(addFollow(follow)),
+    deleteFollow: followId => dispatch(deleteFollow(followId))
   }
 }
 

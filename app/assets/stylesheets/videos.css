@@ -1,0 +1,28 @@
+.video-player {
+  margin-left: 20%;
+  margin-top: 8%;
+}
+
+.info-video {
+  display: flex;
+  justify-content: space-between;
+  width: 872px;
+  border-bottom: 4px solid #4b367c;
+}
+
+.info-video-left {
+  display: flex;
+}
+
+.info-header {
+  font-weight: bold;
+  padding: 5px;
+}
+
+.info-video button {
+  background-color: #6441a4;
+  padding: 7px 14px;
+  border: none;
+  color: white;
+  transition-duration: 0.5s;
+}

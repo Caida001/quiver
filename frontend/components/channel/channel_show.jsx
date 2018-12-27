@@ -5,28 +5,42 @@ import { Link } from 'react-router-dom';
 export default class ChannelShow extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleFollow = this.handleFollow.bind(this);
-    // this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleFollowToggle = this.handleFollowToggle.bind(this);
   }
 
   componentDidMount() {
-    debugger
+
     this.props.requestSingleChannel(this.props.match.params.channelId);
 
   }
 
-  // handleFollow(e) {
-  //   e.preventDefault();
-  //   this.props.createFollow({
-  //     follower_id: this.props.currentUser.id,
-  //     followed_channel_id: this.channelId
-  //   });
-  // }
-  //
-  // handleUnfollow(e) {
-  //   e.preventDefault();
-  //   this.props.deleteFollow(this.channelId);
-  // }
+  handleFollow() {
+    if(Object.keys(this.props.currentUser).length) {
+      return <div className="follow-button">{this.handleFollowToggle()}</div>
+    } else {
+      return (
+        <div className="follow-warning">
+          <button className="follow-button">Follow</button>
+          <div className="tooltip">Please Login to Follow</div>
+        </div>
+      )
+    }
+  }
+
+  handleFollowToggle() {
+    let { follows, followedChannelIds, addFollow, deleteFollow, currentUser, channel } = this.props;
+    if(followedChannelIds.includes(channel.id)) {
+      let followId;
+      follows.forEach(el => {
+        if(el['followed_channel_id'] == channel.id) followId = el['id']
+      })
+    
+      return <button onClick={() => deleteFollow(followId)}>Unfollow</button>
+    } else {
+      return <button onClick={() => addFollow({follower_id: currentUser.id, followed_channel_id: channel.id})}>Follow</button>
+    }
+  }
 
   render() {
     const channel = this.props.channel;
@@ -43,6 +57,7 @@ export default class ChannelShow extends React.Component {
                 <h4>{channel.name}</h4>
               </div>
             </div>
+            {this.handleFollow()}
           </div>
         </div>
       )
