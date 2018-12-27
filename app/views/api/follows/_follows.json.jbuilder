@@ -7,8 +7,4 @@ follows.each do |follow|
     json.followed_channel follow.followed_channel
   end
 
-  json.followed_channel_ids do
-    json.set! follow.id, follow.followed_channel.id 
-  end
-
 end

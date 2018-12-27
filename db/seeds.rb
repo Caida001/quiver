@@ -9,6 +9,7 @@
 User.destroy_all
 Channel.destroy_all
 Category.destroy_all
+Follow.destroy_all
 
 league = Category.create!(name: "League of Legends", category_url: "https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-285x380.jpg")
 fortnite = Category.create!(name: "Fortnite", category_url: "https://static-cdn.jtvnw.net/ttv-boxart/Fortnite-285x380.jpg")
@@ -293,3 +294,5 @@ Follow.create!(follower_id: demo.id, followed_channel_id: zpants.id)
 Follow.create!(follower_id: demo.id, followed_channel_id: ade.id)
 Follow.create!(follower_id: demo.id, followed_channel_id: joey.id)
 Follow.create!(follower_id: demo.id, followed_channel_id: ganymede.id)
+Follow.create!(follower_id: demo.id, followed_channel_id: zelda.id)
+Follow.create!(follower_id: demo.id, followed_channel_id: shadow.id)

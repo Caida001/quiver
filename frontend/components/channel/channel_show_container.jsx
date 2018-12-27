@@ -8,7 +8,7 @@ import ChannelShow from './channel_show';
 const mapStateToProps = (state, { match }) => {
   debugger
   return {
-    channel: state.entities.channels[match.params.channelId-1],
+    channel: state.entities.channels[match.params.channelId],
     currentUser: state.session.currentUser
 
   };

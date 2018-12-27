@@ -1,31 +1,38 @@
 import React from 'react';
 import $ from 'jquery';
 import { withRouter, Link, NavLink } from 'react-router-dom';
+import FollowIndexItem from './follow_index_item';
 
 class FollowIndex extends React.Component {
   constructor(props) {
     super(props);
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
+
     this.props.requestAllChannels();
-    this.props.requestFollows();
+
+    if(Object.keys(this.props.currentUser).length > 0) {
+      this.props.requestFollows();
+    }
+
     $('.btn-expand-collapse').click(function(e) {
 				$('.navbar-primary').toggleClass('collapsed');
       });
   }
 
-  handleClick(id) {
-    this.props.deleteFollow(id)
+  componentDidUpdate(prevProps) {
+    if(this.props.follows != prevProps.follows) {
+      this.forceUpdate();
+    }
   }
+
 
 
   render() {
     const follows = this.props.follows;
 
-    if(Object.keys(this.props.currentUser).length > 0) {
+    if(Object.keys(follows).length) {
 
       return (
 
@@ -44,24 +51,7 @@ class FollowIndex extends React.Component {
           <ul class="navbar-primary-menu">
             {this.props.follows.map(follow => (
 
-                <li key={follow.id} className="follow-item">
-                  <Link key={follow.id} to={`/channels/${follow.followed_channel.id}`}>
-                    <span className='glyphicon'>
-                      <img src={follow.followed_channel.pic_url} />
-                    </span>
-
-
-                    <span className="nav-label">
-                      {follow.followed_channel.name}
-                    </span>
-</Link>
-                    <button type="button" class="close" aria-label="Close" onClick={this.handleClick(follow.followed_channel.id)}>
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-
-
-                </li>
-
+              <FollowIndexItem key={follow.id} follow={follow} deleteFollow={this.props.deleteFollow} />
             ))}
           </ul>
         </nav>

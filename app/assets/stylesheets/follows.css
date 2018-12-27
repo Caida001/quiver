@@ -114,3 +114,11 @@
 .close span{
   color: white;
 }
+
+.follow-item {
+  display: flex;
+}
+
+.follow-link {
+  width: 100%;
+}
