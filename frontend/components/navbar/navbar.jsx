@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown, Modal } from 'react-bootstrap';
 import { Link, withRouter } from 'react-router-dom';
-
+import Search from '../search/search';
 
 class NavBar extends React.Component {
 
@@ -104,8 +104,8 @@ class NavBar extends React.Component {
             <NavItem eventKey={1} href="#/categories">
               Browse
             </NavItem>
-            <NavItem eventKey={2} href="">
-              Store
+            <NavItem eventKey={2} >
+              <Search />
             </NavItem>
           </Nav>
           <Nav pullRight>

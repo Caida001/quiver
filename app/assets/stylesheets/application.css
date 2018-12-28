@@ -31,3 +31,11 @@
  .carousel-control {
    width: 0%;
  }
+
+ .glyphicon-chevron-left {
+   margin-top: -100px !important;
+ }
+
+ .glyphicon-chevron-right {
+   margin-top: -100px !important;
+ }
