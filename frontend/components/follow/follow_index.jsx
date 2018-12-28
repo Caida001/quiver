@@ -40,7 +40,7 @@ class FollowIndex extends React.Component {
           </div>
           <h4 className="featured">Followed Channels</h4>
 
-          <a href="#/channels" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
+          <div class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></div>
           <ul class="navbar-primary-menu">
             {this.props.follows.map(follow => (
 
@@ -66,7 +66,7 @@ class FollowIndex extends React.Component {
             </div>
             <h4 className="featured">Featured Channels</h4>
 
-            <a href="#/channels" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
+            <div class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></div>
             <ul class="navbar-primary-menu">
               {this.props.channels.slice(0,5).map(channel => {
                 return <li>

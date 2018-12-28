@@ -97,7 +97,7 @@ class NavBar extends React.Component {
         <Navbar bsClass="navbar" fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">QUIVER</a>
+              <a href="#">QUIVER.tv</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
@@ -107,12 +107,6 @@ class NavBar extends React.Component {
             <NavItem eventKey={2} href="">
               Store
             </NavItem>
-            <NavDropdown eventKey={3} title="..." id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>About</MenuItem>
-              <MenuItem eventKey={3.2}>Community Guidelines</MenuItem>
-              <MenuItem eventKey={3.3}>Developers</MenuItem>
-              <MenuItem eventKey={3.4}>Jobs</MenuItem>
-            </NavDropdown>
           </Nav>
           <Nav pullRight>
             <NavItem onClick={this.handleModal1}>{button1}</NavItem>
@@ -123,17 +117,14 @@ class NavBar extends React.Component {
 
         <Modal show={this.state.showModal1} onHide={this.close1}>
           <Modal.Header closeButton>
-            <Modal.Title>Log in to Quiver</Modal.Title>
+            <Modal.Title>Log in to Quiver.tv</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form onSubmit={this.handleSubmit} >
             <h4>Username</h4>
-            <br/>
+
             <input type="text" value={this.state.username} onChange={this.update('username')} />
-            <br/>
-            <br/>
             <h4>Password</h4>
-            <br/>
             <input type="password" value={this.state.password} onChange={this.update('password')} />
             <br/>
             <input className="session-submit" type="submit" value="Log In" />
@@ -144,49 +135,24 @@ class NavBar extends React.Component {
 
         <Modal show={this.state.showModal2} onHide={this.close2}>
           <Modal.Header closeButton>
-            <Modal.Title>Join Quiver today</Modal.Title>
+            <Modal.Title>Join Quiver.tv today</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form onSubmit={this.handleSignup} >
               <h4>Username</h4>
-              <br/>
-              <input type="text" value={this.state.username} onChange={this.update('username')} />
-              <br/>
-              <br/>
-              <h4>Password</h4>
-              <br/>
-              <input type="password" value={this.state.password} onChange={this.update('password')} />
-              <br/>
-              <br/>
-              <label className="birthday">Date of Birth
-                <div className="dropdown">
-                  <select>
-                      <option value>Month</option>
-                      <option value="1">January</option>
-                      <option value="2">February</option>
-                      <option value="3">March</option>
-                      <option value="4">April</option>
-                      <option value="5">May</option>
-                      <option value="6">June</option>
-                      <option value="7">July</option>
-                      <option value="8">August</option>
-                      <option value="9">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
-                  </select>
 
-                  <input type="number" name="Day" min="1" max="2" />
-                  <input type="number" name="Year" min="4" max="4" />
-                </div>
-              </label>
-              <br/>
+              <input type="text" value={this.state.username} onChange={this.update('username')} />
+
+              <h4>Password</h4>
+
+              <input type="password" value={this.state.password} onChange={this.update('password')} />
+
               <h4>Email</h4>
-              <br/>
+
               <input type="text" ></input>
-              <br/>
+
               <p>By clicking Sign Up, you are indicating that you have read and agree to the Terms of Service and Privacy Policy.</p>
-              <br/>
+
               <input className="session-submit" type="submit" value="Sign Up" />
             </form>
           </Modal.Body>

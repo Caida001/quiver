@@ -21,10 +21,11 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
+  height: 980px;
 }
  .carousel {
    width: 1000px;
-   margin-top: 285px;
+   margin-top: 280px;
  }
 
  .carousel-control {

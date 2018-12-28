@@ -1,0 +1,19 @@
+.session-submit {
+  margin-top: 10px;
+  background-color: #4b367c;
+  color: white;
+  font-size: 16px;
+  padding: 5px 12px;
+  border: 1px solid #4b367c;
+  text-align: center;
+}
+
+.login-button {
+  margin-top: 10px;
+  background-color: #4b367c;
+  color: white;
+  font-size: 16px;
+  padding: 5px 12px;
+  border: 1px solid #4b367c;
+  text-align: center;
+}
