@@ -11,9 +11,9 @@ export const receiveAllChannels = channels => ({
   channels
 });
 
-export const receiveSingleChannel = channel => ({
+export const receiveSingleChannel = payload => ({
   type: RECEIVE_SINGLE_CHANNEL,
-  channel
+  payload
 });
 
 

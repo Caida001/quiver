@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => {
+
   return {
   requestFollows: () => dispatch(requestFollows()),
   deleteFollow: (followId) => dispatch(deleteFollow(followId)),

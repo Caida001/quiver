@@ -35,7 +35,7 @@ export default class ChannelShow extends React.Component {
       follows.forEach(el => {
         if(el['followed_channel_id'] == channel.id) followId = el['id']
       })
-    
+
       return <button onClick={() => deleteFollow(followId)}>Unfollow</button>
     } else {
       return <button onClick={() => addFollow({follower_id: currentUser.id, followed_channel_id: channel.id})}>Follow</button>

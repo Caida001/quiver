@@ -21,13 +21,6 @@ class FollowIndex extends React.Component {
       });
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(this.props.follows !== nextProps.follows) {
-      this.forceUpdate();
-    }
-  }
-
-
 
   render() {
     const follows = this.props.follows;

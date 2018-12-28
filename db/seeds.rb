@@ -32,7 +32,7 @@ Channel.find_by_owner_id(batman.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/5cb7c333dca3c46b1468_jukes_31720741664_1051171787/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
           category_id: league.id,
-          vid_url: 'http://player.twitch.tv/?video=187649386&time=01h09m15s'
+          vid_url: 'https://player.twitch.tv/?video=354509325&time=03h59m49s'
 )
 
 shadow = User.create!(
@@ -46,7 +46,7 @@ Channel.find_by_owner_id(shadow.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/cf790136a918aa965d00_patopapao_31723104960_1051319493/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
           category_id: league.id,
-          vid_url: 'http://player.twitch.tv/?video=204800797&time=10m45s'
+          vid_url: 'https://player.twitch.tv/?video=354489720&time=01h46m49s'
 )
 
 dbz = User.create!(
@@ -60,7 +60,7 @@ Channel.find_by_owner_id(dbz.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/c084abfeda/sgstyllee_10511238912_10511238912/thumb/thumb0-320x180.jpg',
           cate: 'League of Legends',
           category_id: league.id,
-          vid_url: 'http://player.twitch.tv/?video=204860635&time=01h52m50s'
+          vid_url: 'https://player.twitch.tv/?video=27878606&time=03m35s'
 )
 
 spidey = User.create!(
@@ -74,7 +74,7 @@ Channel.find_by_owner_id(spidey.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/388c4669b47d6b31bad1_cloakzy_31717243024_1050953122/thumb/thumb0-320x180.jpg',
           cate: 'Fortnite',
           category_id: fortnite.id,
-          vid_url: 'http://player.twitch.tv/?video=187283482&time=03m46s'
+          vid_url: 'https://player.twitch.tv/?video=354505807&time=01h52m50s'
 )
 
 dio = User.create!(
@@ -88,7 +88,7 @@ Channel.find_by_owner_id(dio.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/16c4f289671e34594b92_rubius_31143984320_1015124451//thumb/thumb333054537-320x180.jpg',
           cate: 'Fortnite',
           category_id: fortnite.id,
-          vid_url: 'http://player.twitch.tv/?video=182600540&time=14m52s'
+          vid_url: 'https://player.twitch.tv/?video=353894181&time=02m30s'
 )
 
 zelda = User.create!(
@@ -102,7 +102,7 @@ Channel.find_by_owner_id(zelda.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/1baa3439ebd31c30d32b_joshog_30847389760_996587291//thumb/thumb324934405-320x180.jpg',
           cate: 'Call of Duty',
           category_id: call.id,
-          vid_url: 'https://www.youtube.com/watch?v=1rPxiXXxftE'
+          vid_url: 'https://player.twitch.tv/?video=352210101&time=55m49s'
 )
 
 inside = User.create!(
@@ -116,7 +116,7 @@ Channel.find_by_owner_id(inside.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/828a64c4b397611112de_halifax_25660301712_672439349//thumb/thumb156446883-320x180.jpg',
           cate: 'Call of Duty',
           category_id: call.id,
-          vid_url: 'https://www.youtube.com/watch?v=NP4AuKdb_dA'
+          vid_url: 'https://player.twitch.tv/?video=350881980&time=03h10m49s'
 )
 
 john = User.create!(
@@ -130,7 +130,7 @@ Channel.find_by_owner_id(john.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/c39403717190323738df_sheepdog59_26096281296_699687772//thumb/thumb177753315-320x180.jpg',
           cate: 'Grand Theft Auto',
           category_id: grand.id,
-          vid_url: 'https://www.youtube.com/watch?v=OHxyZaZlaOs'
+          vid_url: 'https://player.twitch.tv/?video=111605124&time=05m05s'
 )
 
 
@@ -146,13 +146,13 @@ Channel.find_by_owner_id(dallas.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/77cf140b33_vaderrp_24113323408_575753215//thumb/thumb111605124-320x180.jpg',
           cate: 'Grand Theft Auto',
           category_id: grand.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=347285221&time=03h05m05s'
 )
 
 ganymede = User.create!(
           username: "Ganymede",
           password: "jupiterbestplanet",
-          image_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/02a27423-b097-4e51-9429-dc37959daab4-profile_image-50x50.png"
+          image_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/c4d516d0-0633-49fd-aeca-15448866b858-profile_image-70x70.png"
 )
 
 Channel.find_by_owner_id(ganymede.id).update_attributes!(
@@ -160,7 +160,7 @@ Channel.find_by_owner_id(ganymede.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/f188bae35d91d1ba76ce_venalis_30500312224_974894945//thumb/thumb314406280-320x180.jpg',
           cate: 'Grand Theft Auto',
           category_id: grand.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=353868694&time=02h07m41s'
 )
 
 mikey = User.create!(
@@ -174,7 +174,7 @@ Channel.find_by_owner_id(mikey.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/342d66149a1a76dec618_spaceboy_29452037520_909422508//thumb/thumb284098963-320x180.jpg',
           cate: 'Grand Theft Auto',
           category_id: grand.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=342687768&time=03h05m02s'
 )
 
 terrance = User.create!(
@@ -188,7 +188,7 @@ Channel.find_by_owner_id(terrance.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/a5878da11b8d2076dfb4_iddqd_29009864016_881786664//thumb/thumb272314853-320x180.jpg',
           cate: 'Overwatch',
           category_id: overwatch.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=354551406&time=01h41m13s'
 )
 
 joey = User.create!(
@@ -202,7 +202,7 @@ Channel.find_by_owner_id(joey.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/f2177d25c8d596c91be8_nyxx_tv_31696024960_1049626993/thumb/thumb0-320x180.jpg',
           cate: 'Warframe',
           category_id: warframe.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=314205337&time=3m13s'
 )
 
 howard = User.create!(
@@ -216,7 +216,7 @@ Channel.find_by_owner_id(howard.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/41b09d57187cb664bb70_nyxx_tv_31726658848_1051541611/thumb/thumb0-320x180.jpg',
           cate: 'Warframe',
           category_id: warframe.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=352917738&time=01h57m13s'
 )
 
 ade = User.create!(
@@ -230,7 +230,7 @@ Channel.find_by_owner_id(ade.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/375e28d61fbc4014e7fe_x5_pig_31720539760_1051159168/thumb/thumb0-320x180.jpg',
           cate: 'StarCraft II',
           category_id: star.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=354613401&time=01h57m13s'
 )
 
 virginia = User.create!(
@@ -244,7 +244,7 @@ Channel.find_by_owner_id(virginia.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/3044f567e58814a562a5_x5_pig_31660010960_1047376118//thumb/thumb350716141-320x180.jpg',
           cate: 'StarCraft II',
           category_id: star.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=353165740&time=05m44s'
 )
 
 naum = User.create!(
@@ -258,7 +258,7 @@ Channel.find_by_owner_id(naum.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/375e28d61fbc4014e7fe_x5_pig_31720539760_1051159168/thumb/thumb0-320x180.jpg',
           cate: 'StarCraft II',
           category_id: star.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=354758568&time=01h18m44s'
 )
 
 zpants = User.create!(
@@ -272,7 +272,7 @@ Channel.find_by_owner_id(zpants.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/ee207ae758cb49b03fb1_livibee_31711260064_1050579187/thumb/thumb0-320x180.jpg',
           cate: 'StarCraft II',
           category_id: star.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=181359527&time=18m44s'
 )
 
 
@@ -287,7 +287,7 @@ Channel.find_by_owner_id(demo.id).update_attributes!(
           pic_url: 'https://static-cdn.jtvnw.net/s3_vods/ee207ae758cb49b03fb1_livibee_31711260064_1050579187/thumb/thumb0-320x180.jpg',
           cate: 'StarCraft II',
           category_id: star.id,
-          vid_url: ''
+          vid_url: 'https://player.twitch.tv/?video=353413426&time=18m44s'
 )
 
 Follow.create!(follower_id: demo.id, followed_channel_id: zpants.id)

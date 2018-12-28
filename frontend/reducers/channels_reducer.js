@@ -8,7 +8,7 @@ const channelsReducer = (state = {}, action) => {
     case RECEIVE_ALL_CHANNELS:
       return action.channels;
     case RECEIVE_SINGLE_CHANNEL:
-      return action.channel;
+      return action.payload.channel;
     case EDIT_CHANNEL:
       return action.channel;
     case RECEIVE_ERRORS:
