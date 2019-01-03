@@ -13,7 +13,10 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     dependent: :destroy
 
-  has_many :messages
+  has_many :messages,
+    class_name: :Message,
+    foreign_key: :chatroom_user_id,
+    dependent: :destroy 
 
   has_many :follows,
     class_name: :Follow,

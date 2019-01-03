@@ -48,7 +48,7 @@ export default class ChannelShow extends React.Component {
     if(channel != undefined) {
       return (
         <div className="video-player">
-          <iframe src={channel.vid_url} height='490' width='872' frameBorder='0' scrolling='no' autoplay='0' allowFullScreen='true'></iframe>
+          <iframe src={channel.vid_url} height='490' width='872' frameBorder='0' scrolling='no' autoPlay='0' allowFullScreen='true'></iframe>
           <div className='info-video'>
             <div className='info-video-left'>
               <img src={channel.owner.image_url}></img>

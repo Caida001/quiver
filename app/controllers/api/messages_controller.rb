@@ -2,7 +2,7 @@ class Api::MessagesController < ApplicationController
   before_action :require_signed_in!
 
   def create
-    @message = Message.new(message_params)
+    @message = Message.create!(message_params)
 
     if @message.save!
       chatroom = Chatroom.find(params[:chatroom_id])
@@ -11,7 +11,7 @@ class Api::MessagesController < ApplicationController
         {
           id: @message.id,
           body: @message.body,
-          username: @message.user.username,
+          username: @message.chatroom_user.username,
           channel_id: @message.chatroom.channel.id
         }
 
@@ -27,6 +27,6 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body, :user_id, :chatroom_id)
+    params.require(:message).permit(:chatroom_id, :chatroom_user_id, :body)
   end
 end

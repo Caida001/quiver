@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :show]
     resources :searches, only: [:index]
     resources :follows, only: [:index, :create, :destroy]
-    resources :videos, only: [:show, :create, :update, :destroy]
     resources :chatrooms, only: :show do
       resources :messages, only: [:create, :show]
     end

@@ -2,7 +2,7 @@
   json.set! message.id do
     json.id message.id
     json.channel_id message.chatroom.channel.id
-    json.username message.user.username
+    json.username message.chatroom_user.username
     json.body message.body
   end
-end 
+end

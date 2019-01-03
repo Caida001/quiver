@@ -1,7 +1,10 @@
 class Channel < ApplicationRecord
 
+  after_create :ensure_chatroom
+
   has_one :chatroom,
     class_name: :Chatroom,
+    primary_key: :id,
     foreign_key: :channel_id,
     dependent: :destroy
 
@@ -14,10 +17,6 @@ class Channel < ApplicationRecord
     source: :follower,
     through: :follows
 
-  has_many :videos,
-    foreign_key: :channel_id,
-    class_name: :Video
-
   belongs_to :owner,
     foreign_key: :owner_id,
     class_name: :User
@@ -28,5 +27,9 @@ class Channel < ApplicationRecord
   def self.top_five_results(query_params)
     param = '%' + query_params.downcase + '%'
     Channel.where('lower(name) LIKE ?', param).limit(5)
+  end
+
+  def ensure_chatroom
+    self.chatroom ||= Chatroom.create!(channel_id: self.id)
   end
 end

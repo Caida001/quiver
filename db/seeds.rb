@@ -8,6 +8,8 @@
 
 User.destroy_all
 Channel.destroy_all
+Chatroom.destroy_all
+Message.destroy_all
 Category.destroy_all
 Follow.destroy_all
 
@@ -34,6 +36,7 @@ Channel.find_by_owner_id(batman.id).update_attributes!(
           category_id: league.id,
           vid_url: 'https://player.twitch.tv/?video=354509325&time=03h59m49s'
 )
+
 
 shadow = User.create!(
           username: "Shadowter",
@@ -296,3 +299,159 @@ Follow.create!(follower_id: demo.id, followed_channel_id: joey.id)
 Follow.create!(follower_id: demo.id, followed_channel_id: ganymede.id)
 Follow.create!(follower_id: demo.id, followed_channel_id: zelda.id)
 Follow.create!(follower_id: demo.id, followed_channel_id: shadow.id)
+
+
+Message.create!(
+          chatroom_id: inside.id,
+          chatroom_user_id: zpants.id,
+          body: "Hello there!"
+)
+
+Message.create!(
+          chatroom_id: inside.id,
+          chatroom_user_id: zpants.id,
+          body: "What do you think of live chat"
+)
+
+Message.create!(
+          chatroom_id: inside.id,
+          chatroom_user_id: naum.id,
+          body: "Its pretty cool"
+)
+
+Message.create!(
+          chatroom_id: inside.id,
+          chatroom_user_id: naum.id,
+          body: "When are we getting emotes"
+)
+
+Message.create!(
+          chatroom_id: inside.id,
+          chatroom_user_id: zpants.id,
+          body: "SoonTM"
+)
+
+Message.create!(
+          chatroom_id: batman.id,
+          chatroom_user_id: dallas.id,
+          body: "Oh Hey!"
+)
+
+Message.create!(
+          chatroom_id: batman.id,
+          chatroom_user_id: dallas.id,
+          body: "Not a huge batman fan, but these games are sick. The trailers are cool, too."
+)
+
+Message.create!(
+          chatroom_id: batman.id,
+          chatroom_user_id: mikey.id,
+          body: "I had the video on full screen and I seriously thought my computer was crashing at the end there.﻿"
+)
+
+Message.create!(
+          chatroom_id: batman.id,
+          chatroom_user_id: terrance.id,
+          body: "Its a bit too dark for my taste.﻿"
+)
+
+Message.create!(
+          chatroom_id: spidey.id,
+          chatroom_user_id: ganymede.id,
+          body: "I am pretty excited for this."
+)
+
+Message.create!(
+          chatroom_id: spidey.id,
+          chatroom_user_id: ganymede.id,
+          body: "I am glad they are sticking to their own version of spidey rather than trying to rehash the same old stories."
+)
+
+Message.create!(
+          chatroom_id: spidey.id,
+          chatroom_user_id: mikey.id,
+          body: "that swinging is so smooth"
+)
+
+Message.create!(
+          chatroom_id: spidey.id,
+          chatroom_user_id: mikey.id,
+          body: "me wants it"
+)
+
+Message.create!(
+          chatroom_id: spidey.id,
+          chatroom_user_id: ganymede.id,
+          body: "And sweet we get to see Miles at the end."
+)
+
+Message.create!(
+          chatroom_id: dbz.id,
+          chatroom_user_id: terrance.id,
+          body: "These trailers are actually art... I shouldn't be this excited﻿."
+)
+
+Message.create!(
+          chatroom_id: dbz.id,
+          chatroom_user_id: mikey.id,
+          body: "agreed﻿"
+)
+
+Message.create!(
+          chatroom_id: dbz.id,
+          chatroom_user_id: mikey.id,
+          body: "can't wait to ﻿spend summer playing it"
+)
+
+Message.create!(
+          chatroom_id: dio.id,
+          chatroom_user_id: dio.id,
+          body: "I REJECT MY HUMANITY, JOJO!"
+)
+
+Message.create!(
+          chatroom_id: dio.id,
+          chatroom_user_id: dio.id,
+          body: "I have become so much more!"
+)
+
+Message.create!(
+          chatroom_id: dio.id,
+          chatroom_user_id: virginia.id,
+          body: "What are you even on about"
+)
+
+Message.create!(
+          chatroom_id: zelda.id,
+          chatroom_user_id: virginia.id,
+          body: "The world is so peaceful."
+)
+
+Message.create!(
+          chatroom_id: zelda.id,
+          chatroom_user_id: virginia.id,
+          body: "All I want to do is walk around."
+)
+
+Message.create!(
+          chatroom_id: john.id,
+          chatroom_user_id: joey.id,
+          body: "This is some funny stuff."
+)
+
+Message.create!(
+          chatroom_id: shadow.id,
+          chatroom_user_id: ade.id,
+          body: "Why is everything in this game so ridiculous."
+)
+
+Message.create!(
+          chatroom_id: shadow.id,
+          chatroom_user_id: howard.id,
+          body: "The ridiculousness is the best part though"
+)
+Message.create!(
+          chatroom_id: shadow.id,
+          chatroom_user_id: howard.id,
+          body: "So entertaining"
+)
