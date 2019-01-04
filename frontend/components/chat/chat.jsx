@@ -87,7 +87,7 @@ export default class Chat extends React.Component {
       text = <textarea id='text' placeholder='Please log in first' disabled />
     }
 
-    if(messages.length && this.props.channel) {
+    if(messages && this.props.channel) {
 
       return (
         <div className='chat-container'>
@@ -105,7 +105,7 @@ export default class Chat extends React.Component {
             <div id='input'>
               {text}
               <div id='send'>
-                <button onClick={submitMes}>Send</button>
+                <button onClick={submitMes}>Chat</button>
               </div>
             </div>
           </div>
