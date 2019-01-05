@@ -2,7 +2,7 @@ class Api::MessagesController < ApplicationController
   before_action :require_signed_in!
 
   def create
-    @message = Message.create!(message_params)
+    @message = Message.new(message_params)
 
     if @message.save!
       chatroom = Chatroom.find(params[:chatroom_id])
@@ -15,6 +15,7 @@ class Api::MessagesController < ApplicationController
           channel_id: @message.chatroom.channel.id
         }
 
+      render "api/messages/show"
     else
       render json: @message.errors.full_messages, status: 422
     end

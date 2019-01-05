@@ -22,7 +22,7 @@ export default class Chat extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+
     this.props.requestAllChannels();
     this.props.requestChatroom(this.channelId).then(() => {
 
@@ -54,7 +54,6 @@ export default class Chat extends React.Component {
 
   handleChat(e) {
     e.preventDefault();
-    debugger
     if(this.state.body !== "") {
       this.props.addMessage(this.state).then(
         this.setState({body: ""})
@@ -79,7 +78,7 @@ export default class Chat extends React.Component {
     const messages = this.props.messages;
     const currentUser = this.props.currentUser;
     let submitMes = currentUser ? this.handleChat : "";
-    debugger
+
     let text;
     if(Object.keys(currentUser).length) {
       text = <textarea id='text' value={this.state.body} onChange={this.update} onKeyPress={this.handleEnter} placeholder='start chatting here!!!' />
@@ -96,7 +95,7 @@ export default class Chat extends React.Component {
           </header>
 
           <div className="chat-box">
-            <div id='chat-show' ref={el => {this.display = el}}>
+            <div id='chat-show'>
               {messages.map(message => (
                 <MessageItem key={message.id} currentUser={currentUser} message={message} />
               ))}
